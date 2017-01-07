@@ -15,7 +15,6 @@ public class HW0Runner {
 		return null;
 	}
 
-
 	public static void main(String[] args){
 		
 	}
