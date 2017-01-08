@@ -18,7 +18,13 @@ import java.util.HashMap;
  * - containers  (sets,lists, and maps) http://beginnersbook.com/2015/01/difference-between-list-set-and-map-in-java/
  * - overloaded functions
  */
+
+// NOTE: Asked Kevin Zen to help me conceptualize Singletons and explain the relationship 
+// between HW0Runner and MyContainers in terms of a factory producing singletons 
 public class MyContainers<T,S> implements Containers<T,S> {
+
+	// constructor for instance -- needed to implement singleton 
+	public MyContainers() {}
 
 	private Map<S,T> map; 
 
@@ -26,12 +32,7 @@ public class MyContainers<T,S> implements Containers<T,S> {
 	// You do not need to create your own set implementation and 
  	// can use an existing set class.
 	public Set<T> initSet(T[] tArray) {
-		Set<T> set = new HashSet<T>();
-
-		for (int i = 0; i < tArray.length; i++) {
-			set.add(tArray[i]);
-		}
-
+		Set<T> set = new HashSet<T>(Arrays.asList(tArray));
 		return set; 
 	}
 
