@@ -26,7 +26,9 @@ public class MyContainers<T,S> implements Containers<T,S> {
 	// constructor for instance -- needed to implement singleton 
 	public MyContainers() {}
 
-	private Map<S,T> map; 
+	// initialize to an empty map 
+	// Referenced from Malika Aubakirova 
+	private Map<S,T> map = new HashMap<S,T>(); 
 
 	// Create and return a set that stores the array of T objects
 	// You do not need to create your own set implementation and 
@@ -50,7 +52,6 @@ public class MyContainers<T,S> implements Containers<T,S> {
 	// You do not need to create your own map implementation and 
 	// can use an existing map class.
 	public Map<S,T> initEmptyMap(){
-		Map<S,T> map = new HashMap<S,T>();
 		return map;
 	}
 
