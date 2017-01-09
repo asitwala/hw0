@@ -15,7 +15,7 @@ import java.util.HashMap;
  * A simple interface to wrap some basic Java containers
  * This class uses:
  * - generics (T and S) https://en.wikipedia.org/wiki/Generics_in_Java
- * - containers  (sets,lists, and maps) http://beginnersbook.com/2015/01/difference-between-list-set-and-map-in-java/
+ * - containers (sets, lists, and maps) http://beginnersbook.com/2015/01/difference-between-list-set-and-map-in-java/
  * - overloaded functions
  */
 
@@ -23,12 +23,16 @@ import java.util.HashMap;
 // between HW0Runner and MyContainers in terms of a factory producing singletons 
 public class MyContainers<T,S> implements Containers<T,S> {
 
+
 	// constructor for instance -- needed to implement singleton 
 	public MyContainers() {}
 
-	// initialize to an empty map 
-	// Referenced from Malika Aubakirova 
+
+	// initialize local, stored map to an empty map 
+	// Referenced from Malika Aubakirova in order to prevent error posted on Piazza:
+	// https://piazza.com/class/ixhw9gvaif150j?cid=23
 	private Map<S,T> map = new HashMap<S,T>(); 
+
 
 	// Create and return a set that stores the array of T objects
 	// You do not need to create your own set implementation and 
@@ -39,7 +43,7 @@ public class MyContainers<T,S> implements Containers<T,S> {
 	}
 
 	
-	// Create and return a list that stores an the array of T objects
+	// Create and return a list that stores the array of T objects
 	// You do not need to create your own list implementation and 
 	// can use an existing list class.
 	public List<T> initList(T[] tArray) {
