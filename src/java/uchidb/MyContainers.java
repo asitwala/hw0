@@ -23,16 +23,13 @@ import java.util.HashMap;
 // between HW0Runner and MyContainers in terms of a factory producing singletons 
 public class MyContainers<T,S> implements Containers<T,S> {
 
-
-	// constructor for instance -- needed to implement singleton 
-	public MyContainers() {}
-
-
 	// initialize local, stored map to an empty map 
 	// Referenced from Malika Aubakirova in order to prevent error posted on Piazza:
 	// https://piazza.com/class/ixhw9gvaif150j?cid=23
 	private Map<S,T> map = new HashMap<S,T>(); 
 
+	// constructor for instance -- needed to implement singleton 
+	public MyContainers() {}
 
 	// Create and return a set that stores the array of T objects
 	// You do not need to create your own set implementation and 
@@ -93,6 +90,9 @@ public class MyContainers<T,S> implements Containers<T,S> {
 
 	// Return a value from the stored/local map based on the key
 	public T getValueFromMap(S key){
+		// reference: https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html
+		// "get(Object key): Returns the value to which the specified key is mapped, 
+		// or null if this map contains no mapping for the key."
 		return this.map.get(key);
 	}
 	
